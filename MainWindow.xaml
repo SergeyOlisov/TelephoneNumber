@@ -11,17 +11,15 @@
             <ColumnDefinition Width="247*"/>
             <ColumnDefinition Width="153*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="Firstname" HorizontalAlignment="Left" Margin="17,53,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="Surname" HorizontalAlignment="Left" Margin="152,53,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="TelephonNamber" HorizontalAlignment="Left" Margin="287,53,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="FirstnameInput" HorizontalAlignment="Left" Margin="17,137,0,0" Text="Имя" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="SurnameInput" HorizontalAlignment="Left" Margin="152,137,0,0" Text="Фамилия" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TelephonNamberInput" HorizontalAlignment="Left" Margin="287,137,0,0" Text="Номер" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Access" Content="Access" HorizontalAlignment="Left" Margin="17,197,0,0" VerticalAlignment="Top" Height="33" Width="128" Click="Access_Click"/>
-        <Button x:Name="Next" Content="Next" HorizontalAlignment="Left" Margin="162,196,0,0" VerticalAlignment="Top" Height="33" Width="128" Click="Next_Click"/>
-        <TextBox x:Name="Firstname_Copy" HorizontalAlignment="Left" Margin="17,90,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="Surname_Copy" HorizontalAlignment="Left" Margin="152,90,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
-        <TextBox x:Name="TelephonNamber_Copy" HorizontalAlignment="Left" Margin="287,90,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="FirstnameInput" HorizontalAlignment="Left" Margin="8,307,0,0" Text="Имя" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="SurnameInput" HorizontalAlignment="Left" Margin="143,307,0,0" Text="Фамилия" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TelephonNamberInput" HorizontalAlignment="Left" Margin="278,307,0,0" Text="Номер" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Access" Content="Access" HorizontalAlignment="Left" Margin="8,367,0,0" VerticalAlignment="Top" Height="33" Width="128" Click="Access_Click"/>
+        <ListBox x:Name="ListBox" Margin="0,0,10,199"/>
+        <TextBox x:Name="BoxSearching" Grid.Column="1" HorizontalAlignment="Left" Margin="10,270,0,0" Text="Поиск" TextWrapping="Wrap" VerticalAlignment="Top" Width="278"/>
+        <Button x:Name="ButtonSearching" Content="Поиск" HorizontalAlignment="Left" Margin="10,362,0,0" VerticalAlignment="Top" Height="33" Width="128" Click="ButtonSearching_Click" Grid.Column="1"/>
+        <ListBox x:Name="ListBoxSearching" Grid.Column="1" Margin="0,0,0,199" SelectionChanged="ListBoxSearching_SelectionChanged"/>
+        <TextBox x:Name="RedactName" Grid.Column="1" HorizontalAlignment="Left" Margin="0,307,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="96" />
 
     </Grid>
 </Window>
