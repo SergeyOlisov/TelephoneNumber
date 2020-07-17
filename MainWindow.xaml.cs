@@ -113,6 +113,5 @@ namespace TelephoneNumber
                 RedactName.Text  =  ListBoxSearching.SelectedItem.ToString();
             }
         }
-
     }
 }

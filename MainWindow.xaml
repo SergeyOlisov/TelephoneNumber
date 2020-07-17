@@ -19,7 +19,7 @@
         <TextBox x:Name="BoxSearching" Grid.Column="1" HorizontalAlignment="Left" Margin="10,270,0,0" Text="Поиск" TextWrapping="Wrap" VerticalAlignment="Top" Width="278"/>
         <Button x:Name="ButtonSearching" Content="Поиск" HorizontalAlignment="Left" Margin="10,362,0,0" VerticalAlignment="Top" Height="33" Width="128" Click="ButtonSearching_Click" Grid.Column="1"/>
         <ListBox x:Name="ListBoxSearching" Grid.Column="1" Margin="0,0,0,199" SelectionChanged="ListBoxSearching_SelectionChanged"/>
-        <TextBox x:Name="RedactName" Grid.Column="1" HorizontalAlignment="Left" Margin="0,307,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="96" />
+        <TextBox x:Name="RedactName" Grid.Column="1" HorizontalAlignment="Left" Margin="0,307,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="296" />
 
     </Grid>
 </Window>
