@@ -5,21 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TelephoneNumber"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="321" Width="560">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="247*"/>
-            <ColumnDefinition Width="153*"/>
+            <ColumnDefinition Width="392*"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="267*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="FirstnameInput" HorizontalAlignment="Left" Margin="8,307,0,0" Text="Имя" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="SurnameInput" HorizontalAlignment="Left" Margin="143,307,0,0" Text="Фамилия" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TelephonNamberInput" HorizontalAlignment="Left" Margin="278,307,0,0" Text="Номер" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="Access" Content="Access" HorizontalAlignment="Left" Margin="8,367,0,0" VerticalAlignment="Top" Height="33" Width="128" Click="Access_Click"/>
-        <ListBox x:Name="ListBox" Margin="0,0,10,199"/>
-        <TextBox x:Name="BoxSearching" Grid.Column="1" HorizontalAlignment="Left" Margin="10,270,0,0" Text="Поиск" TextWrapping="Wrap" VerticalAlignment="Top" Width="278"/>
-        <Button x:Name="ButtonSearching" Content="Поиск" HorizontalAlignment="Left" Margin="10,362,0,0" VerticalAlignment="Top" Height="33" Width="128" Click="ButtonSearching_Click" Grid.Column="1"/>
-        <ListBox x:Name="ListBoxSearching" Grid.Column="1" Margin="0,0,0,199" SelectionChanged="ListBoxSearching_SelectionChanged"/>
-        <TextBox x:Name="RedactName" Grid.Column="1" HorizontalAlignment="Left" Margin="0,307,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="296" />
+        <TextBox x:Name="FirstnameInput" HorizontalAlignment="Left" Margin="292,10,0,0" Text="Имя" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="SurnameInput" HorizontalAlignment="Left" Margin="292,44,0,0" Text="Фамилия" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="TelephonNamberInput" HorizontalAlignment="Left" Margin="292,78,0,0" Text="Номер" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Grid.ColumnSpan="3"/>
+        <Button x:Name="Access" Content="Внести или изменить данные" HorizontalAlignment="Left" Margin="293,112,0,0" VerticalAlignment="Top" Height="33" Width="128" Click="Access_Click" Grid.ColumnSpan="3" FontSize="9"/>
+        <ListBox x:Name="ListBox" Margin="0,0,29,81" SelectionChanged="ListBox_SelectionChanged"/>
+        <TextBox x:Name="BoxSearching" HorizontalAlignment="Left" Margin="0,233,0,0" Text="Поиск" TextWrapping="Wrap" VerticalAlignment="Top" Width="285"/>
+        <Button x:Name="ButtonSearching" Content="Поиск" HorizontalAlignment="Left" Margin="0,264,0,0" VerticalAlignment="Top" Height="33" Width="128" Click="ButtonSearching_Click"/>
+        <Button x:Name="ButtonUpdate" Content="Обновить" HorizontalAlignment="Left" Margin="142,264,0,0" VerticalAlignment="Top" Height="33" Width="128" Click="ButtonUpdate_Click" />
 
     </Grid>
 </Window>
