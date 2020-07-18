@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using MySql.Data.MySqlClient;
 using System.IO;
 using System.Runtime;
+using System;
 
 namespace TelephoneNumber
 {
@@ -10,6 +11,7 @@ namespace TelephoneNumber
     public partial class MainWindow : Window
     {
         private static MySqlConnection db;
+        string id;
         public MainWindow()
         {
             InitializeComponent();
@@ -18,13 +20,14 @@ namespace TelephoneNumber
 
         private void ShowDB() 
         {
-            MySqlDataReader result = ConnectDB("SELECT name, surname, TelephoneNumber FROM TelephoneBook");
+            MySqlDataReader result = ConnectDB("SELECT * FROM TelephoneBook");
             while (result.Read())
             {
+                int id = result.GetInt32("ID");
                 string Name = result.GetString("name") + " ";
                 string Surname = result.GetString("surname") + " ";
                 string TelephoneNumber = result.GetString("TelephoneNumber") + " ";
-                ListBox.Items.Add(Name + Surname + TelephoneNumber);
+                ListBox.Items.Add(id + " " + Name + Surname + TelephoneNumber);
             }
             result.Close();
             db.Close();
@@ -64,6 +67,7 @@ namespace TelephoneNumber
             {
                 MessageBox.Show("Нет совпадений по БД", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+            db.Close();
         }
 
         private MySqlDataReader ConnectDB(string sql) 
@@ -91,21 +95,46 @@ namespace TelephoneNumber
         {
             if (ListBox.SelectedIndex != -1)
             {
-                //FirstnameInput.Text = ListBox.SelectedItem.ToString();
                 string tempLine = ListBox.SelectedItem.ToString();
+                string[] words;
                 if (tempLine != null) 
                 {
                     tempLine = tempLine.Trim();
-                    string[] words = tempLine.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    /*var index = tempLine.IndexOf(" ");
-                    var lastIndex = tempLine.LastIndexOf(" ");
-                    FirstnameInput.Text = tempLine.Substring(0, index);
-                    SurnameInput.Text = tempLine.Substring(index + 1, lastIndex);
-                    TelephonNamberInput.Text = tempLine.Substring(lastIndex + 1, tempLine.Length - 1); */
+                    words = tempLine.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    FirstnameInput.Text = words[1];
+                    SurnameInput.Text = words[2];
+                    TelephonNamberInput.Text = words[3];
+                    id = words[0];
                 }
-
-
             }
+        }
+        private void ButtonСhange_Click(object sender, RoutedEventArgs e)
+        {
+            int idchanged = Convert.ToInt32(id);
+            const string host = "mysql11.hostland.ru";
+            const string database = "host1323541_itstep6";
+            const string port = "3306";
+            const string username = "host1323541_itstep";
+            const string pass = "269f43dc";
+            const string ConnString = "Server=" + host + ";Database=" + database + ";port=" + port + ";User Id=" + username + ";password=" + pass;
+            db = new MySqlConnection(ConnString);
+            db.Open();
+            string sql = $"UPDATE TelephoneBook SET name = '{FirstnameInput.Text}' , surname = '{SurnameInput.Text}' , TelephoneNumber = '{TelephonNamberInput.Text}'  WHERE ID = {idchanged};";
+            var query = new MySqlCommand { Connection = db, CommandText = sql };
+            var result = query.ExecuteNonQuery();
+            FirstnameInput.Clear();
+            SurnameInput.Clear();
+            TelephonNamberInput.Clear();
+            if (result == 1)
+            {
+                MessageBox.Show("Данные изменены", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else 
+            {
+                MessageBox.Show("Данные не изменены", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Error);
+            } 
+            
+            
         }
     }
 }
